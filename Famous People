@@ -1,0 +1,85 @@
+/*fictional characters*/
+
+CREATE TABLE characters
+    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    show_name TEXT,
+    real_name TEXT,
+    character_name TEXT,
+    genere TEXT);
+INSERT INTO characters (show_name, real_name, character_name, genere)
+    VALUES ("supernatural", "jensen_ackles", "dean_winchester", "horror");
+INSERT INTO characters (show_name, real_name, character_name, genere)
+    VALUES ("supernatural", "jared_padilecki", "sam_winchester", "horror");
+INSERT INTO characters (show_name, real_name, character_name, genere)
+    VALUES ("supernatural", "misha_collins", "cass", "horror");
+INSERT INTO characters (show_name, real_name, character_name, genere)
+    VALUES ("new_girl", "zoey_deschanel", "jessica_day", "comedy");
+INSERT INTO characters (show_name, real_name, character_name, genere)
+    VALUES ("new_girl", "jake_johnson", "nick_miller", "comedy");
+INSERT INTO characters (show_name, real_name, character_name, genere)
+    VALUES ("new_girl", "max_greenfield", "schmidt", "comedy");
+INSERT INTO characters (show_name, real_name, character_name, genere)
+    VALUES ("dahmer", "evan_peters", "jeffery_dahmer", "true_crime");
+    INSERT INTO characters (show_name, real_name, character_name, genere)
+    VALUES ("dahmer", "niecy_nash", "glenda_cleavland", "true_crime");
+     INSERT INTO characters (show_name, real_name, character_name, genere)
+    VALUES ("dahmer", "richard_jenkins", "lionel_dahmer", "true_crime");  
+    
+CREATE TABLE profesional_history
+    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actor_id TEXT,
+    show TEXT,
+    seasons INTEGER);
+
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (1, "supernatural", 15);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (1, "the_boys", 1);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (2, "supernatural", 15);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (2, "walker", 2);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (2, "gilmore_girls", 7);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (3, "supernatural", 11);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (3, "charmed", 8);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (4, "new_girl", 7);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (4, "weeds", 7);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (5, "new_girl", 7);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (5, "minx", 1);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (6, "new_girl", 7);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (6, "the_neighborhood", 6);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (7, "dahmer", 1);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (7, "american_horror_story", 11);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (7, "the_office", 2);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (8, "dahmer", 1);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (8, "claws", 5);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (8, "never_have_i_ever", 2);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (9, "dahmer", 1);
+    INSERT INTO profesional_history (actor_id, show, seasons)
+VALUES (9, "six_feet_under", 4);
+
+
+/*actors and show names*/
+
+SELECT characters.real_name AS actor, profesional_history.show FROM characters JOIN profesional_history ON characters.id= profesional_history.actor_id;
+
+/* total years on shows*/
+
+SELECT characters.real_name AS actor, profesional_history.seasons FROM characters
+JOIN profesional_history ON characters.id= profesional_history.actor_id;
